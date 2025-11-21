@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Pagina de teste</title>
+      </head>
+    <style>
+  
+    body{
+        background-color:rgb(0,200,255);
+    }
+    div{
+        background-color: blue;
+        width:265px;
+        height:400px;️ 
+    }
+    .aviso{
+        background-color:rgb(200,100,0) ;
+        height: 20px;
+        width: 1000px;
+    }
+    input{
+        background-color:rgb(0,100,255);
+        width: 250px;
+        height:20px;
+        
+    }
+    input::placeholder {
+        color: black;
+    }
+    </style>
+    <body>
+        <h2 style="background-color:green;text-align:center">Calculadora de consumo de eletricidade estimado</h2>
+     <br>
+     <center><div>
+     <input type="number" id="nm1" placeholder="Digite sem virgula a potencia em W">
+     <br><br>
+     <input type="number" id="nm2" placeholder="Digite o tempo de uso em horas">
+     <br><br>
+     <input type="number" id="nm3" placeholder="Digite a tarifa">
+     <br><br>
+     <input type="number" id="nm4" placeholder="Digite os dias de uso">
+     <br><br>
+     <button onclick="somar()">somar</button>
+     <p id="resultado"></p>
+     <br>
+     <input type="number" id="nr" placeholder="Digite o numero em minutos">
+     <br><br>
+     <button onclick="transformar()">Transformar</button>
+     <p id="transformação"></p>
+       </div>
+       <br><br>
+     <div class="aviso"> <strong> ⚠️Aviso de responsabilidade: esta é uma pagina apenas para fins educativos, os resultados podem não ser precisos use por sua propria conta e riscos </strong>
+   </div>
+     </center>
+     <script>
+     function somar(){
+         let n1= Number(document.getElementById("nm1").value);
+         let n2= Number(document.getElementById("nm2").value);
+         let n3= Number(document.getElementById("nm3").value);
+         let n4= Number(document.getElementById("nm4").value);
+         let resultado=n1/1000*n2*n3*n4; 
+         document.getElementById("resultado").innerText ="Resultado em R$: " + resultado.toLocaleString("pt-BR",{minimumFractionDigits:2});
+     }
+     function transformar(){
+         let nmr1=Number(document.getElementById("nr").value);
+         let resultado_t=(nmr1/60);
+         document.getElementById("transformação").innerText = "Resultado: " + resultado_t;
+     }
+     </script>
+    </body>
+    </html>
